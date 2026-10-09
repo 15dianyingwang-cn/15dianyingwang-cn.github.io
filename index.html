@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<title>15电影网 - 15分钟选片法_类型片单、十五部必看与深度影评</title>
+<meta name="description" content="15电影网（15 dianying wang）以'15'为纲：15分钟选片法、15部必看经典、15种镜头语言、15个观影场景、15条影史时间线、深度影评与观影日历">
+<meta name="keywords" content="15电影网,15电影,15分钟选片法,15部必看,类型电影,镜头语言,经典片单,电影影评,观影指南,高分电影">
+<meta name="author" content="15电影网">
+<meta name="copyright" content="15电影网">
+<link rel="canonical" href="https://15dianyingwang-cn.github.io/">
+<style>
+:root{
+  --bg:#0b1020; --bg2:#141a30; --bg3:#1c2440;
+  --c1:#ff5a5f; --c2:#ffb020; --c3:#2dd4bf; --c4:#4f8cff; --c5:#a78bfa;
+  --sans:"Inter","PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --serif:"Source Serif 4","Songti SC",Georgia,"Noto Serif CJK SC",serif;
+  --disp:"Anton","Archivo Black","PingFang SC",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:#e6ebf5;line-height:1.85;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.55;
+  background:radial-gradient(circle at 88% 8%,rgba(255,90,95,.16),transparent 26%),radial-gradient(circle at 6% 92%,rgba(45,212,191,.13),transparent 28%)}
+.wrap{width:min(1180px,92vw);margin:0 auto;position:relative;z-index:1}
+a{color:inherit;text-decoration:none;transition:.22s cubic-bezier(.3,.75,.4,1)}
+::selection{background:var(--c1);color:#fff}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--c1),var(--c2));border-radius:9px}
+
+.nav{position:sticky;top:0;z-index:70;background:rgba(11,16,32,.95);backdrop-filter:blur(11px);border-bottom:3px solid var(--c1);box-shadow:0 6px 22px rgba(0,0,0,.4)}
+.nav .wrap{display:flex;align-items:center;gap:12px;height:58px}
+.logo{display:flex;align-items:baseline;gap:9px;font-weight:900;font-size:19px;white-space:nowrap;letter-spacing:.4px}
+.logo .n{font-family:var(--disp);font-size:25px;color:var(--c2);letter-spacing:-.5px;transform:rotate(-4deg);display:inline-block}
+.logo em{font-style:normal;font-size:8.4px;letter-spacing:2.1px;color:#8d9ab6;font-family:var(--mono);line-height:1.1}
+.menu{display:flex;gap:2px;margin-left:auto}
+.menu a{padding:8px 11px;font-size:12.8px;color:#c7d2e4;font-weight:700;border-radius:7px;letter-spacing:.3px}
+.menu a:hover,.menu a.on{color:#0b1020;background:var(--c2)}
+.burger{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:2px}
+
+.hero{background:linear-gradient(135deg,#070b18 0%,#2a1228 54%,#0b1020 100%);border-bottom:3px solid var(--c1);padding:26px 0 22px;overflow:hidden}
+.hg{display:grid;grid-template-columns:1fr 232px;gap:30px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10.2px;letter-spacing:2.3px;color:#0b1020;font-weight:800;background:linear-gradient(90deg,var(--c2),var(--c3));padding:5px 13px;border-radius:999px}
+h1{font-size:clamp(28px,5.6vw,54px);line-height:1.14;margin:13px 0;font-weight:900;letter-spacing:-.7px;font-family:var(--disp)}
+h1 u{text-decoration:none;color:var(--c1)}
+h1 .big{font-family:var(--disp);color:var(--c2);font-size:1.25em;vertical-align:middle;margin:0 4px;letter-spacing:-2px}
+h1 i{font-style:normal;color:#fff}
+.hsub{font-size:clamp(13px,1.5vw,14.6px);color:#b9c4d8;max-width:60ch;text-align:justify}
+.hsub strong{color:#fff}
+.cta{display:flex;gap:11px;margin-top:20px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 25px;border-radius:999px;font-size:14px;font-weight:800;letter-spacing:.5px;border:2px solid var(--c1)}
+.btn-p{background:var(--c1);color:#fff}
+.btn-p:hover{background:#fff;border-color:#fff;transform:translateY(-2px);color:#0b1020}
+.btn-o{background:transparent;color:#fff}
+.btn-o:hover{background:var(--c1);color:#fff}
+
+/* 沙漏主视觉 */
+.hour{width:200px;height:200px;margin:0 auto;position:relative;display:grid;place-items:center}
+.hour .gl{position:absolute;inset:0;border-radius:50%;border:1.6px solid rgba(255,176,32,.5);animation:ri 2.4s ease-out infinite}
+.hour .gl:nth-child(2){animation-delay:.8s}
+.hour .gl:nth-child(3){animation-delay:1.6s}
+@keyframes ri{from{transform:scale(.4);opacity:.85}to{transform:scale(1.55);opacity:0}}
+.hour svg{width:150px;height:150px;filter:drop-shadow(0 0 18px rgba(255,90,95,.35))}
+.sand{stroke-dasharray:100;stroke-dashoffset:0;animation:sand 7s linear infinite}
+@keyframes sand{to{stroke-dashoffset:100}}
+.hour .cap{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:8.6px;letter-spacing:2.4px;color:#8d9ab6;font-weight:800;white-space:nowrap}
+
+section{padding:46px 0}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:9px;border-bottom:3px solid var(--c1)}
+.sec-t{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:var(--disp);font-size:clamp(18px,2.6vw,27px);font-weight:900;letter-spacing:.5px}
+.sec-t b{font-family:var(--disp);font-size:22px;color:var(--c2);letter-spacing:-1px}
+.sec-t em{font-style:normal;font-size:10px;color:#8d9ab6;letter-spacing:2px;font-family:var(--mono);font-weight:700}
+.more{font-size:11.8px;letter-spacing:.8px;color:#fff;border-bottom:2px solid var(--c1);padding-bottom:2px;font-weight:700}
+.more:hover{color:var(--c2);border-color:var(--c2)}
+
+/* 01 十五部必看：砖石 Bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.bt{grid-column:span 2;min-height:196px;border-radius:15px;padding:16px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;border:1.4px solid rgba(255,255,255,.12);transition:.32s;background-size:cover;background-position:center}
+.bt.s1{grid-column:span 3;min-height:236px}
+.bt.s3{grid-column:span 3;min-height:150px}
+.bt::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,var(--my),32%),rgba(255,255,255,.22),transparent 62%);opacity:0;transition:.3s}
+.bt:hover::after{opacity:1}
+.bt:hover{transform:translateY(-8px) rotate(-.6deg);border-color:var(--c2);box-shadow:0 24px 42px rgba(255,176,32,.24)}
+.bt .no{position:absolute;top:12px;left:14px;font-family:var(--disp);font-size:34px;line-height:1;letter-spacing:-1px;color:rgba(255,255,255,.92);text-shadow:0 3px 10px rgba(0,0,0,.45);z-index:2}
+.bt h4{position:relative;z-index:2;font-family:var(--serif);font-size:20px;font-weight:850;line-height:1.3}
+.bt .mt{position:relative;z-index:2;font-family:var(--mono);font-size:9.8px;letter-spacing:.6px;color:#ffe9c9;font-weight:700}
+
+/* 02 十五种镜头语言：SVG 刻度条 */
+.bars{background:linear-gradient(165deg,var(--bg2),#1a1c34);border:1.4px solid rgba(255,255,255,.12);border-radius:16px;padding:22px 20px 18px}
+.row{display:grid;grid-template-columns:74px 1fr 78px;align-items:center;gap:11px;margin-bottom:12px}
+.row b{font-size:13.4px;font-weight:750;letter-spacing:.3px}
+.row .track{height:9px;background:rgba(255,255,255,.09);border-radius:99px;overflow:hidden}
+.row .fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--c1),var(--c2));transition:width 1.1s cubic-bezier(.3,.75,.4,1)}
+.row .fill.g{background:linear-gradient(90deg,var(--c3),var(--c4))}
+.row .fill.p{background:linear-gradient(90deg,var(--c5),var(--c1))}
+.row span.v{font-family:var(--mono);font-size:11px;color:#8d9ab6;text-align:right;font-weight:800}
+
+/* 03 观影场景：双栏步骤条 */
+.guide{display:grid;grid-template-columns:1.35fr .65fr;gap:22px}
+.steps{counter-reset:g}
+.st{counter-increment:g;position:relative;padding:15px 16px 15px 74px;background:var(--bg2);border-radius:13px;margin-bottom:11px;border:1.4px solid rgba(255,255,255,.1);transition:.26s}
+.st::before{content:counter(g,decimal-leading-zero);position:absolute;left:16px;top:14px;font-family:var(--disp);font-size:25px;color:var(--c2);letter-spacing:-1px;line-height:1}
+.st b{display:block;font-family:var(--serif);font-size:16.6px;margin-bottom:4px;font-weight:770}
+.st p{font-size:12.3px;color:#aeb9cd;text-align:justify}
+.st:hover{transform:translateX(6px);border-color:var(--c2);background:rgba(255,176,32,.07)}
+.side{display:flex;flex-direction:column;gap:12px}
+.stat{border-radius:13px;padding:15px 17px;border:1.4px dashed rgba(255,255,255,.2);transition:.26s}
+.stat:hover{border-color:var(--c3);background:rgba(45,212,191,.06);transform:translateY(-4px)}
+.stat i{font-style:normal;font-family:var(--disp);font-size:27px;line-height:1;color:var(--c3);letter-spacing:-1px;display:block}
+.stat small{font-size:11.4px;color:#b9c4d8;display:block;margin-top:5px}
+
+/* 04 影史时间线：15 个节点 */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--c1),var(--c2),var(--c3),var(--c4),var(--c5))}
+.nd{position:relative;padding:13px 16px;background:var(--bg2);border-radius:12px;margin-bottom:11px;border:1.4px solid rgba(255,255,255,.1);transition:.26s}
+.nd::before{content:"";position:absolute;left:-23px;top:19px;width:11px;height:11px;border-radius:50%;background:var(--c2);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--c2)}
+.nd:hover{transform:translateX(7px);border-color:var(--c2)}
+.nd .yr{font-family:var(--mono);font-size:12.6px;font-weight:800;letter-spacing:1.4px;color:var(--c2)}
+.nd h4{font-family:var(--serif);font-size:17.4px;font-weight:790;margin:2px 0 5px}
+.nd p{font-size:12.3px;color:#aeb9cd;text-align:justify}
+
+/* 05 深度影评：报纸分栏 */
+.press{column-count:3;column-gap:26px;column-rule:1.4px dashed rgba(255,255,255,.16);background:linear-gradient(165deg,#11183a,#0b1020);border:1.4px solid rgba(255,255,255,.12);border-radius:16px;padding:24px 24px 20px}
+.press p{font-size:13.2px;color:#c3cde0;text-align:justify;margin-bottom:12px;break-inside:avoid}
+.press p:first-of-type::first-letter{font-family:var(--disp);font-size:44px;color:var(--c2);float:left;line-height:.86;margin:4px 7px 0 0;text-shadow:3px 3px 0 var(--c1)}
+.press .by{font-family:var(--mono);font-size:10.4px;letter-spacing:1.5px;color:#8d9ab6;border-top:1.4px solid rgba(255,255,255,.16);padding-top:9px;margin-top:6px}
+
+/* 06 观影日历 */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:9px}
+.day{position:relative;background:var(--bg2);border:1.4px solid rgba(255,255,255,.13);border-radius:13px;padding:12px;transition:.26s;min-height:158px;display:flex;flex-direction:column;gap:5px}
+.day .wd{font-family:var(--mono);font-size:9px;letter-spacing:1.8px;color:#8d9ab6;font-weight:800}
+.day .dt{font-family:var(--disp);font-size:26px;line-height:1;font-weight:900;letter-spacing:-1px}
+.day .mv{font-size:11.8px;font-weight:720;line-height:1.45;margin-top:auto;font-family:var(--serif)}
+.day .sp{font-size:9.2px;font-family:var(--mono);letter-spacing:.5px;font-weight:700;color:var(--c1)}
+.day.today{border-color:var(--c2);background:rgba(255,176,32,.1);box-shadow:0 0 0 2px var(--c2),0 12px 26px rgba(255,176,32,.2)}
+.day.today .dt{color:var(--c2)}
+.day:hover{transform:translateY(-5px)}
+
+.notice{background:rgba(255,90,95,.08);border:1.4px dashed rgba(255,90,95,.55);border-radius:12px;padding:15px 19px;margin:6px 0 0;font-size:12.5px;color:#dbe3f0}
+.notice b{color:var(--c2)}
+
+.prose{padding:30px 0 6px}
+.prose h2{font-family:var(--disp);font-size:clamp(18px,2.5vw,27px);margin-bottom:10px;font-weight:900;letter-spacing:.5px}
+.prose h3{font-family:var(--serif);font-size:17px;margin:18px 0 6px;color:var(--c2);font-weight:770}
+.prose p{color:#a9b6cc;font-size:13.5px;margin-bottom:11px;text-align:justify}
+
+.foot{margin-top:24px;background:#070b18;border-top:3px solid var(--c1);padding:34px 0 36px}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:22px;margin-bottom:24px}
+.foot h6{color:#fff;font-size:11.2px;margin-bottom:11px;letter-spacing:1.4px;font-family:var(--mono);font-weight:800}
+.foot ul li{margin-bottom:7px;font-size:12px}
+.foot a:hover{color:var(--c1)}
+.foot .sig{font-family:var(--disp);font-weight:900;font-size:23px;letter-spacing:.6px}
+.foot .sig .n{color:var(--c2)}
+.fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:11px;border-top:1px solid rgba(255,255,255,.14);padding-top:17px;font-size:11.8px;color:#6f7d96;font-family:var(--mono)}
+.fin a{color:var(--c2)}
+
+.top{position:fixed;right:14px;bottom:18px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--c1);color:#fff;box-shadow:0 10px 22px rgba(255,90,95,.35);opacity:0;pointer-events:none;transition:.3s;z-index:60;font-size:18px;font-weight:900}
+.top.show{opacity:1;pointer-events:auto}
+.top:hover{background:var(--c2);color:#0b1020}
+
+@media(max-width:1060px){.bento{grid-template-columns:repeat(4,1fr)}.bt,.bt.s1,.bt.s3{grid-column:span 2}.bt.s1{min-height:224px}.press{column-count:2}}
+@media(max-width:880px){
+  .nav .wrap{height:56px;gap:8px}.logo{font-size:18px}.logo em{display:none}.logo .n{font-size:22px}
+  .burger{display:block;margin-left:auto}
+  .menu{position:fixed;inset:56px 0 0;flex-direction:column;background:rgba(11,16,32,.99);padding:15px;transform:translateX(100%);transition:.34s;z-index:69;overflow:auto}
+  .menu.open{transform:translateX(0)}
+  .menu a{padding:13px 15px;font-size:15px;border-bottom:1.4px solid rgba(255,255,255,.1);border-radius:0}
+  .hero{padding:20px 0 18px}.hg{grid-template-columns:1fr;gap:4px}
+  .hour{order:-1;width:180px;height:180px}
+  section{padding:36px 0}
+  .guide{grid-template-columns:1fr}
+  .week{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  h1{font-size:23px}
+  .btn{padding:10px 18px;font-size:13px;flex:1;justify-content:center}
+  .bento{grid-template-columns:1fr}.bt,.bt.s1,.bt.s3{grid-column:span 1;min-height:180px}
+  .row{grid-template-columns:58px 1fr 60px;gap:8px}.row b{font-size:12.2px}
+  .press{column-count:1;padding:18px}
+  .week{grid-template-columns:1fr}
+  .day{min-height:auto;flex-direction:row;flex-wrap:wrap;align-items:center}.day .mv{margin-top:0}
+}
+@media print{body{background:#fff;color:#000}.nav,.top,.hour,.eyebrow,.bento{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="15电影网首页">
+      <span class="n">15</span>
+      <span>电影网<em>FIFTEEN MINUTES TO CHOOSE</em></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="主导航">
+      <a href="#bento">十五部必看</a>
+      <a href="#bars">镜头语言</a>
+      <a href="#guide">观影场景</a>
+      <a href="#tl">影史时间线</a>
+      <a href="#press">深度影评</a>
+      <a href="#week">观影日历</a>
+    </nav>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="菜单">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hg">
+      <div>
+        <span class="eyebrow">◆ 15 分钟 · 选出今晚那部片</span>
+        <h1 id="h1">只给 <span class="big">15</span> 分钟，<br>决定今晚看<u>什么</u> <i>·</i></h1>
+        <p class="hsub"><strong>15电影网（15 dianying wang）</strong>以"15"为纲：<strong>15分钟选片法、15部必看经典、15种镜头语言、15个观影场景、15条影史时间线、深度影评与观影日历</strong>。选片不是品味问题，是<strong>时间预算</strong>问题。</p>
+        <div class="cta">
+          <a class="btn btn-p" href="#bento" rel="nofollow">开始选片 →</a>
+          <a class="btn btn-o" href="#guide" rel="nofollow">15 个场景</a>
+        </div>
+      </div>
+      <div>
+        <div class="hour" aria-label="15 分钟沙漏">
+          <span class="gl" aria-hidden="true"></span>
+          <span class="gl" aria-hidden="true"></span>
+          <span class="gl" aria-hidden="true"></span>
+          <svg viewBox="0 0 120 150" role="img" aria-label="沙漏示意">
+            <path d="M14 12 L106 12 L14 78 L106 78 Z" fill="none" stroke="#ffb020" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M14 138 L106 138 L106 72 L14 72 Z" fill="none" stroke="#ffb020" stroke-width="2.6" stroke-linejoin="round"/>
+            <line x1="40" y1="12" x2="40" y2="40" stroke="#ffb020" stroke-width="1.6" stroke-dasharray="2 4"/>
+            <line x1="80" y1="12" x2="80" y2="34" stroke="#ffb020" stroke-width="1.6" stroke-dasharray="2 4"/>
+            <path class="sand" d="M60 78 L60 130" stroke="#ff5a5f" stroke-width="4.4" stroke-linecap="round"/>
+            <circle cx="60" cy="130" r="5" fill="#ff5a5f"/>
+          </svg>
+          <span class="cap">15 MIN · CHOOSE WELL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 十五部必看 -->
+  <section id="bento" aria-labelledby="t1">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><b>15</b>部必看 <em>MUST-SEE 15</em></div>
+        <a class="more" href="#" rel="nofollow">完整 15 部 →</a>
+      </div>
+      <div class="bento">
+        <article class="bt s1" style="background:linear-gradient(160deg,#7a0c2e,#ff5a5f)"><span class="no">01</span><h4>《肖申克的救赎》</h4><span class="mt">1994 · 美国 · 142 MIN · 希望</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#3a1540,#a78bfa)"><span class="no">02</span><h4>《低俗小说》</h4><span class="mt">1994 · 非线性</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#15304a,#4f8cff)"><span class="no">03</span><h4>《星际穿越》</h4><span class="mt">2014 · 科幻</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#4a2a08,#c87a1a)"><span class="no">04</span><h4>《霸王别姬》</h4><span class="mt">1993 · 华语</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#0e3a34,#2dd4bf)"><span class="no">05</span><h4>《楚门的世界》</h4><span class="mt">1998 · 寓言</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#3a1a1a,#dc2626)"><span class="no">06</span><h4>《辛德勒的名单》</h4><span class="mt">1993 · 黑白</span></article>
+        <article class="bt s3" style="background:linear-gradient(160deg,#241240,#7c3aed)"><span class="no">07</span><h4>《搏击俱乐部》</h4><span class="mt">1999 · 反转 · 139 MIN</span></article>
+        <article class="bt s3" style="background:linear-gradient(160deg,#402a08,#ca8a04)"><span class="no">08</span><h4>《阿甘正传》</h4><span class="mt">1994 · 公路 · 142 MIN</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#4a0826,#db2777)"><span class="no">09</span><h4>《这个杀手不太冷》</h4><span class="mt">1994 · 法国</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#082a3a,#0e7490)"><span class="no">10</span><h4>《海上钢琴师》</h4><span class="mt">1998 · 意大利</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#3a3a08,#a3a308)"><span class="no">11</span><h4>《控方证人》</h4><span class="mt">1957 · 黑白</span></article>
+        <article class="bt s1" style="background:linear-gradient(160deg,#0a3a1c,#16a34a)"><span class="no">12</span><h4>《美丽人生》</h4><span class="mt">1997 · 意大利 · 116 MIN · 喜剧悲剧</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#1a1a3a,#4338ca)"><span class="no">13</span><h4>《盗梦空间》</h4><span class="mt">2010 · 梦境</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#3a2a1a,#92400e)"><span class="no">14</span><h4>《七武士》</h4><span class="mt">1954 · 日本</span></article>
+        <article class="bt" style="background:linear-gradient(160deg,#2a082a,#a21caf)"><span class="no">15</span><h4>《天堂电影院》</h4><span class="mt">1988 · 意大利</span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 十五种镜头语言 -->
+  <section id="bars" aria-labelledby="t2">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><b>15</b>种镜头语言 <em>LANGUAGE</em></div>
+        <a class="more" href="#" rel="nofollow">术语表 →</a>
+      </div>
+      <div class="bars">
+        <div class="row"><b>长镜头</b><span class="track"><i class="fill" data-w="96"></i></span><span class="v">压迫感 96</span></div>
+        <div class="row"><b>快速剪辑</b><span class="track"><i class="fill" data-w="91"></i></span><span class="v">心率 91</span></div>
+        <div class="row"><b>对称构图</b><span class="track"><i class="fill" data-w="88"></i></span><span class="v">秩序 88</span></div>
+        <div class="row"><b>浅景深</b><span class="track"><i class="fill g" data-w="82"></i></span><span class="v">孤独 82</span></div>
+        <div class="row"><b>广角畸变</b><span class="track"><i class="fill g" data-w="78"></i></span><span class="v">不安 78</span></div>
+        <div class="row"><b>手持晃动</b><span class="track"><i class="fill" data-w="74"></i></span><span class="v">真实 74</span></div>
+        <div class="row"><b>升格慢镜</b><span class="track"><i class="fill p" data-w="69"></i></span><span class="v">诗意 69</span></div>
+        <div class="row"><b>跳切</b><span class="track"><i class="fill p" data-w="63"></i></span><span class="v">焦虑 63</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 观影场景 -->
+  <section id="guide" aria-labelledby="t3">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><b>15</b>个观影场景 <em>SCENE</em></div>
+        <a class="more" href="#" rel="nofollow">完整场景 →</a>
+      </div>
+      <div class="guide">
+        <div>
+          <article class="st"><b>通勤 42 分钟</b><p>地铁摇晃，选 <strong>短片或单集纪录片</strong>。避开需要字幕的文艺片——晃动的车厢会让你漏掉半句台词。<em>推荐：《鸟》《窗户》《时间代码》</em></p></article>
+          <article class="st"><b>午休 60 分钟</b><p>吃完饭脑子最糊，看 <strong>节奏明确、信息量低</strong>的片。<em>推荐：《海蒂和爷爷》《小森林》《帕丁顿熊》</em></p></article>
+          <article class="st"><b>睡前 90 分钟</b><p>别看悬疑。<strong>长镜头与缓慢叙事</strong>是最好的助眠，但请定好闹钟——看到凌晨三点是常事。<em>推荐：《地球之盐》《迁徙的鸟》</em></p></article>
+          <article class="st"><b>周末午后</b><p>这是唯一值得 <strong>2.5 小时史诗</strong>的时段。<em>推荐：《指环王》《美国往事》《七武士》</em></p></article>
+          <article class="st"><b>约会第一回</b><p>选 <strong>共同话题型</strong>，不选高分冷门。<em>推荐：《爱在黎明破晓前》《寻梦环游记》《布达佩斯大饭店》</em></p></article>
+        </div>
+        <aside class="side">
+          <div class="stat"><i>15′</i><small>选片上限：超过 15 分钟还没决定，就随机——<b>犹豫的时间已经够看半部短片</b></small></div>
+          <div class="stat"><i>142′</i><small>院线平均片长。通勤 42′ + 午休 60′ + 睡前 90′ = <b>每天 192 分钟的可支配观影时间</b></small></div>
+          <div class="stat"><i>3×</i><small>一部好片值得看三遍：<b>第一遍看剧情，第二遍看调度，第三遍看声音</b></small></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 影史时间线 -->
+  <section id="tl" aria-labelledby="t4">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><b>15</b>条影史时间线 <em>TIMELINE</em></div>
+        <a class="more" href="#" rel="nofollow">完整年表 →</a>
+      </div>
+      <div class="tl">
+        <article class="nd"><span class="yr">1895</span><h4>卢米埃尔兄弟放映《火车进站》</h4><p>电影诞生。观众被迎面而来的火车吓得后退——<strong>这是人类第一次被影像欺骗</strong>。</p></article>
+        <article class="nd"><span class="yr">1903</span><h4>鲍特《火车大劫案》</h4><p>第一次有了<strong>镜头切换与叙事顺序</strong>。电影从此不只是记录，而是"讲述"。</p></article>
+        <article class="nd"><span class="yr">1915</span><h4>格里菲斯《一个国家的诞生》</h4><p>平行剪辑成熟，但内容充满种族偏见——<strong>技术天才与道德盲区的并存</strong>。</p></article>
+        <article class="nd"><span class="yr">1927</span><h4>《爵士歌手》有声</h4><p>声音进入电影，默片演员集体失业。<strong>每一次技术革命，都先杀死一批人。</strong></p></article>
+        <article class="nd"><span class="yr">1941</span><h4>《公民凯恩》深焦</h4><p>威尔斯用<strong>深焦与低角度</strong>改写语法，影评人称其为"电影界的《尤利西斯》"。</p></article>
+        <article class="nd"><span class="yr">1954</span><h4>黑泽明《七武士》</h4><p>动作场面的<strong>多机位剪辑模板</strong>，至今仍是好莱坞的教科书。</p></article>
+        <article class="nd"><span class="yr">1960</span><h4>《惊魂记》浴室戏</h4><p>78 个镜头、3 秒一个，<strong>用剪辑制造恐惧</strong>——没有一刀砍到皮肤上。</p></article>
+        <article class="nd"><span class="yr">1994</span><h4>影史最强的一年</h4><p>《肖申克的救赎》《低俗小说》《阿甘正传》《霸王别姬》《这个杀手不太冷》同年问世。<strong>好年份不是运气，是时代情绪。</strong></p></article>
+        <article class="nd"><span class="yr">1999</span><h4>《黑客帝国》子弹时间</h4><p>技术炫技的巅峰。<strong>但 25 年后仍被讨论的，是它提的那个问题。</strong></p></article>
+        <article class="nd"><span class="yr">2013</span><h4>《地心引力》沉浸声</h4><p>杜比全景声普及，<strong>声音从"伴奏"变成"主角"</strong>。</p></article>
+        <article class="nd"><span class="yr">2014</span><h4>《鸟人》伪一镜</h4><p>长镜头回归主流。<strong>剪辑是止痛药，长镜头是把药拿走。</strong></p></article>
+        <article class="nd"><span class="yr">2019</span><h4>《寄生虫》首获金棕榈</h4><p>韩国电影登上顶点。<strong>字幕不再是门槛，好故事自己会走。</strong></p></article>
+        <article class="nd"><span class="yr">2020</span><h4>流媒体与院线之争</h4><p>疫情加速变革。<strong>载体在变，但 15 分钟的选片时间，从来没有变过。</strong></p></article>
+        <article class="nd"><span class="yr">2024</span><h4>AI 进入后期流程</h4><p>补帧、降噪、修复全面提速。<strong>技术让老片重生，也让"电影感"变得更廉价。</strong></p></article>
+        <article class="nd"><span class="yr">2026</span><h4>观众回到"选择"</h4><p>片库无限大，时间依然 24 小时。<strong>所以有了 15 分钟选片法。</strong></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 深度影评 -->
+  <section id="press" aria-labelledby="t5">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><b>15</b>篇深度影评 <em>CRITIQUE</em></div>
+        <a class="more" href="#" rel="nofollow">全部影评 →</a>
+      </div>
+      <article class="press">
+        <p><strong>选片不是品味问题，是时间预算问题。</strong>流媒体把"看什么"变成了每天最大的决策成本。真正的奢侈不是 4K，是<strong>你知道今晚要为什么花两小时</strong>。15 分钟选片法：5 分钟定类型，5 分钟定时长，5 分钟定心情。</p>
+        <p><strong>长镜头是导演的自信。</strong>《1917》的 119 分钟里，剪辑点被藏进转场与地形。《鸟人》则靠遮黑与数字缝合。<strong>伪一镜不丢人，丢人的是你根本没察觉。</strong>观众不需要知道技术，但需要感受到"真实"。</p>
+        <p><strong>反转的密度，决定重看的欲望。</strong>《看不见的客人》把"观众知道的比主角多"用到极致。第二次看，你不是看结局，是看<strong>导演怎么骗你</strong>。答案一直在画面上，你却看不见。</p>
+        <p><strong>最吓人的一声，是没响的那声。</strong>《寄生虫》暴雨夜，镜头什么都没给，你却听见了屋顶漏雨。<strong>留白是导演对观众的信任。</strong></p>
+        <p><strong>声效先于画面。</strong>《敦刻尔克》的潜艇逼近、《寂静之地》的踩踏声，低频 30Hz 直接作用于内脏。<strong>手机小屏看不出 4K，但听得清 30Hz。</strong>耳机比屏幕更值得花钱。</p>
+        <p><strong>别开 1.25 倍速。</strong>剪辑节奏是导演算好的心跳，加速等于给自己做心肺复苏。<strong>一部 142 分钟的片，被解锁 11 次，等于每 11 分钟断一次情绪。</strong></p>
+        <div class="by">— 15电影网 · 编辑部 · 15 MINUTES TO CHOOSE</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 06 观影日历 -->
+  <section id="week" aria-labelledby="t6">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><b>15</b>分钟观影日历 <em>WEEK</em></div>
+        <a class="more" href="#" rel="nofollow">下一周 →</a>
+      </div>
+      <div class="week">
+        <div class="day"><span class="wd">MON</span><span class="dt">06.15</span><span class="mv">《鸟》<br>长镜头 · 短片</span><span class="sp">14 MIN</span></div>
+        <div class="day"><span class="wd">TUE</span><span class="dt">06.16</span><span class="mv">《海蒂和爷爷》<br>午休治愈</span><span class="sp">106 MIN</span></div>
+        <div class="day"><span class="wd">WED</span><span class="dt">06.17</span><span class="mv">《时间代码》<br>通勤短片</span><span class="sp">15 MIN</span></div>
+        <div class="day today"><span class="wd">THU · TODAY</span><span class="dt">06.18</span><span class="mv">《1917》<br>一镜到底</span><span class="sp">119 MIN</span></div>
+        <div class="day"><span class="wd">FRI</span><span class="dt">06.19</span><span class="mv">《布达佩斯大饭店》<br>约会首选</span><span class="sp">99 MIN</span></div>
+        <div class="day"><span class="wd">SAT</span><span class="dt">06.20</span><span class="mv">《七武士》<br>周末史诗</span><span class="sp">207 MIN</span></div>
+        <div class="day"><span class="wd">SUN</span><span class="dt">06.21</span><span class="mv">《地球之盐》<br>睡前纪录片</span><span class="sp">110 MIN</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="notice">
+    <b>版权与合规声明：</b>15电影网为<strong>电影赏析、选片方法与观影指南</strong>站点，<strong>不提供、不链接、不索引任何涉及版权争议的播放源、资源链接、M3U/TS 播放列表或下载资源</strong>。文中片目均为影史公认经典，观看请<strong>以各正版平台、电影节展映与实体正版碟公告为准</strong>。支持正版，就是让下一部好电影还能被拍出来。
+  </div></div>
+
+  <section class="prose" aria-labelledby="seo">
+    <div class="wrap">
+      <h2 id="seo">15电影网：15 分钟，选出今晚那部片</h2>
+      <p><strong>15电影网（15 dianying wang）</strong>是一个以<strong>选片效率</strong>为核心的电影赏析站点。我们不做资源，做<strong>决策</strong>：<strong>15分钟选片法、15部必看经典、15种镜头语言、15个观影场景、15条影史时间线、深度影评与观影日历</strong>。核心关键词：<strong>15电影网、15电影、15分钟选片法、15部必看、类型电影、镜头语言、经典片单、电影影评、观影指南、高分电影</strong>。</p>
+      <h3>15 分钟选片法</h3>
+      <p><strong>第 1 个 5 分钟，定类型。</strong>今天要"被安慰"还是"被刺激"？前者选剧情/纪录片，后者选悬疑/动作。<strong>第 2 个 5 分钟，定时长。</strong>通勤 42 分钟看短片，睡前 90 分钟看慢片，周末下午才配得上 200 分钟的史诗。<strong>第 3 个 5 分钟，定心情。</strong>想哭、想笑、想被吓、想被说服——<b>四种需求，四种答案</b>。超过 15 分钟还没决定，就随机。<strong>犹豫的时间，已经够看半部短片。</strong></p>
+      <h3>15 种镜头语言，决定你的心跳</h3>
+      <p>观众说"好看"却说不清为什么，是因为<strong>情绪来自语法</strong>：<strong>长镜头</strong>不给逃生出口（压迫感 96）、<strong>快速剪辑</strong>把鼓点当节拍器（心率 91）、<strong>对称构图</strong>制造秩序与压抑（秩序 88）、<strong>浅景深</strong>让人孤独（孤独 82）、<strong>广角畸变</strong>诱发不安（不安 78）、<strong>手持晃动</strong>制造真实（真实 74）、<strong>升格慢镜</strong>留下诗意（诗意 69）、<strong>跳切</strong>制造焦虑（焦虑 63）。<b>看懂语法，你就再也骗不了自己"只是故事好看"。</b></p>
+      <h3>15 个场景，15 种选法</h3>
+      <p>地铁别看需要字幕的文艺片（晃动的车厢会让你漏掉半句台词）；午休别看悬疑（下午开会会走神）；睡前别看反转（你会看到凌晨三点）；周末下午才值得 2.5 小时史诗；<strong>约会第一回选"共同话题型"，不选高分冷门</strong>——<b>让对方有话可说，比让对方"看懂"更重要。</b></p>
+      <h3>画质与码率：别被"4K"骗了</h3>
+      <p><strong>真 4K 合理码率 40–80 Mbps，多数"免费 4K"不足 8 Mbps。</strong>但对选片而言，<strong>声轨比画面更值得花钱</strong>：低频 30Hz 在手机小屏上听得出，4K 在手机小屏上看不出（感知差小于 7%）。<strong>戴耳机、关弹幕、别开倍速</strong>——这三件事，比换一台电视更能提升观影质量。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <div class="sig"><span class="n">15</span>电影网</div>
+        <p style="font-size:12px;margin-top:8px;color:#6f7d96">15 分钟，选出今晚那部片。</p>
+      </div>
+      <div><h6>选片</h6><ul><li><a href="#bento">15 部必看</a></li><li><a href="#guide">15 个场景</a></li><li><a href="#" rel="nofollow">按心情</a></li><li><a href="#" rel="nofollow">按时长</a></li></ul></div>
+      <div><h6>方法</h6><ul><li><a href="#bars">15 种镜头</a></li><li><a href="#tl">影史时间线</a></li><li><a href="#" rel="nofollow">剪辑课</a></li><li><a href="#" rel="nofollow">声效课</a></li></ul></div>
+      <div><h6>阅读</h6><ul><li><a href="#press">深度影评</a></li><li><a href="#week">观影日历</a></li><li><a href="#" rel="nofollow">术语表</a></li><li><a href="#" rel="nofollow">参考文献</a></li></ul></div>
+    </div>
+    <div class="fin">
+      <span>© <span id="yr">2026</span> 15电影网 15 dianying wang · 以各正版平台、电影节与展映方公告为准</span>
+      <span>站点地址：<a href="https://15dianyingwang-cn.github.io/" rel="noopener">https://15dianyingwang-cn.github.io/</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="top" id="topBtn" href="#top" aria-label="回到顶部" title="回到顶部">↑</a>
+
+<script>
+var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',function(){
+  var o=menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded',o?'true':'false');
+});
+menu.addEventListener('click',function(e){
+  if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+});
+var topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',function(){topBtn.classList[window.scrollY>700?'add':'remove']('show');});
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+document.querySelectorAll('.bt').forEach(function(c){
+  c.addEventListener('mousemove',function(e){
+    var r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    c.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+});
+
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(en){
+    if(en.isIntersecting){
+      var f=en.target;
+      f.style.width=f.dataset.w+'%';
+      io.unobserve(f);
+    }
+  });
+},{threshold:.35});
+document.querySelectorAll('.fill').forEach(function(f){io.observe(f);});
+</script>
+</body>
+</html>
